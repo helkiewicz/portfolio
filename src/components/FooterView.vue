@@ -9,33 +9,36 @@
         <v-card-text>
           <v-btn
             class="mx-4"
-            icon="fas fa-comment"
+            icon="fa-brands fa-github"
             variant="plain"
             color="white"
+            href="https://github.com/"
           ></v-btn>
           <v-btn
             class="mx-4"
-            icon="fas fa-university"
+            icon="fa-brands fa-facebook"
             variant="plain"
             color="white"
+            href="https://facebook.com"
           ></v-btn>
           <v-btn
             class="mx-4"
-            icon="fas fa-wifi"
+            icon="fa-brands fa-instagram"
             variant="plain"
             color="white"
+            href="https://instagram.com"
           ></v-btn>
           <v-btn
             class="mx-4"
-            icon="fas fa-podcast"
+            icon="fa-brands fa-twitter"
             variant="plain"
             color="white"
+            href="https://twitter.com"
           ></v-btn>
         </v-card-text>
 
         <v-card-text class="text-white">
-          @ {{ new Date().getFullYear() }} —
-          <strong>AAE IdeaPro All Rights Reserved</strong>
+          <strong></strong>
         </v-card-text>
       </v-card>
     </v-footer>

@@ -7,11 +7,12 @@
           <v-col cols="5">
             <div style="position: relative" class="mt-16">
               <h1 class="text-grey">Hello,</h1>
-              <h1 class="text-white">I'M Lara Elizabeth</h1>
-              <span class="text-grey">Web Designer & Developer</span><br />
+              <h1 class="text-white">We are Zosia and Alena</h1>
+              <span class="text-grey">Web Designers & Developers</span><br />
 
-              <v-btn tile dark class="text-yellow mt-8" variant="outlined">
-                Contact me
+              <v-btn tile dark class="text-blue mt-8" variant="outlined" href="https://www.google.com/intl/pl/gmail/about/">
+                Contact us
+                
               </v-btn>
             </div>
           </v-col>
@@ -34,7 +35,7 @@
           </v-col>
           <v-col cols="5">
             <div style="position: relative; z-index: 9999" class="mt-16">
-              <v-img src="i1.png" contain max-height="300"></v-img>
+              <v-img src="i.1.png" contain max-height="500"></v-img>
             </div>
           </v-col>
         </v-row>
@@ -44,34 +45,34 @@
           <v-row>
             <v-col cols="12" sm="6">
               <div class="egg">
-                <v-img src="i2.png" max-height="300" class=""></v-img>
+                <v-img src="i.2.png" max-height="300" class=""></v-img>
               </div>
             </v-col>
             <v-col cols="12" sm="6">
-              <h5 class="mt-16">About Me</h5>
+              <h5 class="mt-16" style="font-size:24px;">About Us</h5>
               <div style="width: 120px">
                 <v-slider
                   v-model="slider2"
-                  color="yellow"
+                  color="blue"
                   label="track-color"
                 ></v-slider>
               </div>
-              <h4 class="mt-n4">I Am a Creative Web Designer</h4>
-              <h4 class="">And Developer</h4>
+              <h4 class="mt-n4">We are Creative Web Designers</h4>
+              <h4 class="">And Developers</h4>
               <p class="text-grey">
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                Aspernatur, ullam perspiciatis fugiat temporibus laboriosam
-                accusamus tempora repellendus sequi sed cum dolorum vero est.
-                Placeat dicta architecto reiciendis est veniam. Unde.
+                Our combined expertise in design and development allows us to create websites that not only look great 
+                but also deliver a seamless user experience.
+                Whether you need a simple portfolio website, an e-commerce platform, 
+                or a complex web application, we have the skills and knowledge to bring your vision to life.
               </p>
               <br />
               <p class="text-grey">
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                Aspernatur, ullam perspiciatis fugiat temporibus laboriosam
-                accusamus tempora repellendus sequi sed cum dolorum vero est.
-                Placeat dicta architecto reiciendis est veniam. Unde.
+                We work closely with our clients throughout the entire design and development process to ensure 
+                that we deliver a product that meets all of their requirements and exceeds their expectations. 
+                We believe that communication is key,
+                so we make sure to keep our clients informed and involved every step of the way.
               </p>
-              <v-btn tile dark color="yellow" class="mt-4">
+              <v-btn tile dark color="blue" class="mt-4">
                 Download Resume
               </v-btn>
             </v-col>
@@ -79,11 +80,11 @@
         </div>
       </v-col>
       <div class="text-center mt-4">
-        <h2>What we Do</h2>
+        <h2>What We Do</h2>
         <div style="width: 120px; margin: 0 auto">
           <v-slider
             v-model="slider2"
-            color="yellow"
+            color="blue"
             label="track-color"
           ></v-slider>
         </div>
@@ -95,37 +96,38 @@
               <div class="child">
                 <v-btn
                   icon="fas fa-laptop"
-                  color="#FBDF7E"
+                  color="#2288f5"
                   class="text-white"
                 ></v-btn>
                 <h3 class="ml-3 mt-4">Web Design</h3>
                 <p class="text-grey ml-3 mt-4 text-caption">
-                  Lorem, ipsum dolor sit amet <br />consectetur adipisicing
-                  <br />consectetur adipis
+                   We create the visual layout,  
+                    <br />user interface, 
+                  <br /> and overall look of a website.
                 </p>
               </div>
               <div class="child">
                 <v-btn
                   icon="fas fa-mobile-alt"
-                  color="#FBDF7E"
+                  color="#2288f5"
                   class="text-white"
                 ></v-btn>
                 <h3 class="ml-3 mt-4">App Design</h3>
                 <p class="text-grey ml-3 mt-4 text-caption">
-                  Lorem, ipsum dolor sit amet <br />consectetur adipisicing
-                  <br />consectetur adipis
+                  We create user interface   <br />and user experience
+                  <br />for a mobile application.
                 </p>
               </div>
               <div class="child">
                 <v-btn
-                  icon="fas fa-camera"
-                  color="#FBDF7E"
+                  icon="fa-solid fa-bag-shopping"
+                  color="#2288f5"
                   class="text-white"
                 ></v-btn>
-                <h3 class="ml-3 mt-4">Photography</h3>
+                <h3 class="ml-3 mt-4">Product Design</h3>
                 <p class="text-grey ml-3 mt-4 text-caption">
-                  Lorem, ipsum dolor sit amet <br />consectetur adipisicing
-                  <br />consectetur adipis
+                  We create the physical    <br /> and digital form
+                  <br /> of a product.
                 </p>
               </div>
             </v-col>
@@ -135,11 +137,10 @@
       </v-col>
       <v-col cols="12" sm="12" id="services">
         <div class="d-flex justify-center mb-6">
-          <v-btn color="#FBDF7E" class="mr-2">All</v-btn>
+          <v-btn color="#2288f5" class="mr-2">All</v-btn>
           <v-btn class="mr-2" variant="tonal">Web Design</v-btn>
           <v-btn class="mr-2" variant="tonal">Front Design</v-btn>
-          <v-btn class="mr-2" variant="tonal"> Photography</v-btn>
-          <v-btn variant="tonal"> Illustration</v-btn>
+          <v-btn class="mr-2" variant="tonal"> Product Design</v-btn>
         </div>
       </v-col>
       <v-col cols="12" class="imgHover">
@@ -161,7 +162,7 @@
       </v-col>
       <v-col cols="12" sm="12">
         <div class="d-flex justify-center mb-6">
-          <v-btn color="#FBDF7E" class="mt-4">Load More</v-btn>
+          <v-btn color="#2288f5" class="mt-4">Load More</v-btn>
         </div>
       </v-col>
       <v-col cols="12" id="page">
@@ -169,46 +170,46 @@
           <v-row>
             <v-col cols="12" sm="4">
               <v-card class="mx-auto" max-width="344" height="">
-                <v-img src="i10.jpg" height="200px" cover></v-img>
+                <v-img src="i.10.jpg" height="200px" cover></v-img>
 
-                <v-card-title> We provide you the best </v-card-title>
+                <v-card-title> Reliable </v-card-title>
 
                 <v-card-subtitle>
-                  By AAE IdeaPro | 06 Sep 2022
+                  By ZOLENA
                 </v-card-subtitle>
                 <v-card-text>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit
-                  rem saepe sapiente deleniti, odio non laborum fuga.
+                  You can trust that we will be there every step 
+                  of the way to provide support and answer any questions you may have. 
                 </v-card-text>
               </v-card>
             </v-col>
             <v-col cols="12" sm="4">
               <v-card class="mx-auto" max-width="344" height="">
-                <v-img src="i11.jpg" height="200px" cover></v-img>
+                <v-img src="i.11.jpg" height="200px" cover></v-img>
 
-                <v-card-title> We provide you the best </v-card-title>
+                <v-card-title> Best quality </v-card-title>
 
                 <v-card-subtitle>
-                  By AAE IdeaPro | 06 Sep 2022
+                  By ZOLENA 
                 </v-card-subtitle>
                 <v-card-text>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit
-                  rem saepe sapiente deleniti, odio non laborum fuga.
+                  From the initial consultation to the final product delivery, 
+                  we are committed to providing you with the highest level of service.
                 </v-card-text>
               </v-card>
             </v-col>
             <v-col cols="12" sm="4">
               <v-card class="mx-auto" max-width="344" height="">
-                <v-img src="i12.jpg" height="200px" cover></v-img>
+                <v-img src="i.12.jpg" height="200px" cover></v-img>
 
-                <v-card-title> We provide you the best </v-card-title>
+                <v-card-title> Customization </v-card-title>
 
                 <v-card-subtitle>
-                  By AAE IdeaPro | 06 Sep 2022
+                  By ZOLENA
                 </v-card-subtitle>
                 <v-card-text>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit
-                  rem saepe sapiente deleniti, odio non laborum fuga.
+                  We take the time to understand your business needs and work with you 
+                  to create a website that is tailored to your specific requirements. 
                 </v-card-text>
               </v-card>
             </v-col>
@@ -219,15 +220,13 @@
         <div class="hire">
           <v-row>
             <v-col cols="12" sm="8">
-              <h1 class="mt-9">Hire me for your awesome project</h1>
+              <h1 class="mt-9">Hire us for your awesome project</h1>
               <p class="text-grey">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod
-                itaque, eaque molestiae deleniti, earum voluptate eos id dicta
-                at, blanditiis
+                We look forward to working with you to create a website that showcases your brand and helps you achieve your goals.
               </p>
             </v-col>
             <v-col cols="12" sm="4">
-              <v-btn color="#FBDF7E" class="mt-15">Hire Me</v-btn>
+              <v-btn color="#2288f5" class="mt-15">Hire Us</v-btn>
             </v-col>
           </v-row>
         </div>
@@ -244,7 +243,7 @@
                 variant="outlined"
               ></v-btn
               ><br />
-              <span class="text-caption">Your Street SYO,yourArea Dream </span
+              <span class="text-caption">Gdańsk, Poland </span
               ><br />
               <v-btn
                 icon="fas fa-phone-alt"
@@ -253,8 +252,8 @@
                 variant="outlined"
               ></v-btn
               ><br />
-              <span class="text-caption">00235 - 6521 </span> <br />
-              <span class="text-caption">00235 - 6521 </span> <br />
+              <span class="text-caption">736-482-937 </span> <br />
+              <span class="text-caption">938-472-635 </span> <br />
               <v-btn
                 icon="fas fa-envelope"
                 color=""
@@ -262,32 +261,35 @@
                 variant="outlined"
               ></v-btn
               ><br />
-              <span class="text-caption">aaeideapro@gmail.com </span> <br />
-              <span class="text-caption">aaeideapro@gmail.com </span> <br />
+              <span class="text-caption">zofiaassg@gmail.com </span> <br />
+              <span class="text-caption">alena.mi@gmail.com </span> <br />
             </div>
           </v-col>
           <v-col cols="12" sm="8">
             <h1 class="mt-8">Send your message</h1>
             <v-divider></v-divider>
             <span class="text-caption"
-              >Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt
-              fugiat officia, odio eaque exercitationem libero nesciunt placeat,
-              repellat obcaecati sed tenetur! Est labore aliquam amet
-              consequatur necessitatibus fugit obcaecati facilis!</span
+              >If you need a website designed or developed, feel free to send us a message!
+               We would be happy to discuss your project and provide you with a quote. Contact us today to get started!</span
             >
+            <form action="https://getform.io/f/d15a9529-660c-4b7e-a281-d9dda634f056" method="POST" enctype="multipart/form-data">
             <v-row class="mt-10">
               <v-col cols="12" sm="6">
                 <v-text-field
+                type="text"
                   label="Name"
                   persistent-hint
                   variant="outlined"
+                  name="name"
                 ></v-text-field>
               </v-col>
               <v-col cols="12" sm="6">
                 <v-text-field
-                  label="Phone No"
+                  type="email"
+                  label="Email"
                   persistent-hint
                   variant="outlined"
+                  name="email"
                 ></v-text-field>
               </v-col>
             </v-row>
@@ -295,23 +297,26 @@
               label="Message"
               persistent-hint
               variant="outlined"
+              name="message"
             ></v-textarea>
-            <v-btn color="#FBDF7E" class="mt-2">Submit Now</v-btn>
+            <v-btn color="#2288f5" class="mt-2" type="submit">Submit Now</v-btn>
+          </form>
           </v-col>
         </v-row>
+        
       </v-col>
     </v-container>
     <FooterView />
   </v-app>
 </template>
 
+
+
 <script>
 import { defineComponent } from "vue";
 import NavBar from "../components/NavBar.vue";
 import FooterView from "../components/FooterView.vue";
 
-// Components
-//import HelloWorld from '../components/HelloWorld.vue';
 
 export default defineComponent({
   name: "HomeView",
@@ -321,22 +326,22 @@ export default defineComponent({
 
       items: [
         {
-          img: "i3.jpg",
+          img: "i.3.png",
         },
         {
-          img: "i4.jpg",
+          img: "i.4.png",
         },
         {
-          img: "i5.jpg",
+          img: "i.5.png",
         },
         {
-          img: "i6.jpeg",
+          img: "i.6.jpg",
         },
         {
-          img: "i9.jpg",
+          img: "i.9.jpg",
         },
         {
-          img: "i8.jpg",
+          img: "i.8.jpg",
         },
       ],
     };
