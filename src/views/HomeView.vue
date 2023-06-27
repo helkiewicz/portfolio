@@ -72,9 +72,10 @@
                 We believe that communication is key,
                 so we make sure to keep our clients informed and involved every step of the way.
               </p>
-              <v-btn tile dark color="blue" class="mt-4">
+              <v-btn tile dark color="blue" class="mt-4" @click="downloadPDF">
                 Download Resume
               </v-btn>
+
             </v-col>
           </v-row>
         </div>
@@ -137,12 +138,16 @@
       </v-col>
       <v-col cols="12" sm="12" id="services">
         <div class="d-flex justify-center mb-6">
-          <v-btn color="#2288f5" class="mr-2">All</v-btn>
-          <v-btn class="mr-2" variant="tonal">Web Design</v-btn>
-          <v-btn class="mr-2" variant="tonal">Front Design</v-btn>
-          <v-btn class="mr-2" variant="tonal"> Product Design</v-btn>
+          <v-btn color="#2288f5" class="mr-2" @click="filterProjects('all')">All</v-btn>
+          <v-btn class="mr-2" variant="tonal" @click="filterProjects('web')">Web Design</v-btn>
+          <v-btn class="mr-2" variant="tonal" @click="filterProjects('front')">Front Design</v-btn>
+          <v-btn class="mr-2" variant="tonal" @click="filterProjects('product')">Product Design</v-btn>
         </div>
+        <!-- <div v-for="project in filteredItems" :key="project.img">
+          
+        </div> -->
       </v-col>
+      
       <v-col cols="12" class="imgHover">
         <v-row class="fill-height" align="center" justify="center">
           <template v-for="(item, i) in items" :key="i">
@@ -162,7 +167,7 @@
       </v-col>
       <v-col cols="12" sm="12">
         <div class="d-flex justify-center mb-6">
-          <v-btn color="#2288f5" class="mt-4">Load More</v-btn>
+          <v-btn color="#2288f5" class="mt-4" @click="loadMore">Load More</v-btn>
         </div>
       </v-col>
       <v-col cols="12" id="page">
@@ -307,6 +312,9 @@
       </v-col>
     </v-container>
     <FooterView />
+    <v-btn fab bottom right class="scroll-top-button" @click="scrollToTop">
+      UP!
+    </v-btn>
   </v-app>
 </template>
 
@@ -317,11 +325,16 @@ import { defineComponent } from "vue";
 import NavBar from "../components/NavBar.vue";
 import FooterView from "../components/FooterView.vue";
 
-
 export default defineComponent({
   name: "HomeView",
+  components: {
+    NavBar,
+    FooterView
+  },
   setup() {
+    
     return {
+      
       slider2: 50,
 
       items: [
@@ -346,13 +359,135 @@ export default defineComponent({
       ],
     };
   },
-  components: {
-    NavBar,
-    FooterView
-},
+//   setup() {
+    
+    
+//     const items = [
+//       {
+//         img: "i.3.png",
+//       },
+//       {
+//         img: "i.4.png",
+//       },
+//       {
+//         img: "i.5.png",
+//       },
+//       {
+//         img: "i.6.jpg",
+//       },
+//       {
+//         img: "i.9.jpg",
+//       },
+//       {
+//         img: "i.8.jpg",
+//       },
+//       {
+//         img: "i.13.png",
+//       },
+//       {
+//         img: "i.14.png",
+//       },
+//       {
+//         img: "i.15.png",
+//       },
+//     ];
+//     const displayedItems = ref(items.slice(0, 3));
+
+// const loadMore = () => {
+//   const startIndex = displayedItems.value.length;
+//   const endIndex = startIndex + 3;
+//   displayedItems.value = displayedItems.value.concat(items.slice(startIndex, endIndex));
+// };
+
+// return {
+//   slider2: 50,
+//   displayedItems,
+//   loadMore,
+// };
+//   },
+  // data() {
+  //   return {
+  //     selectedCategory: "all",
+  //     slider2: 50,
+  //     items: [
+  //       {
+  //         img: "i.3.png",
+  //         category: "web",
+  //       },
+  //       {
+  //         img: "i.4.png",
+  //         category: "front",
+  //       },
+  //       {
+  //         img: "i.5.png",
+  //         category: "web",
+  //       },
+  //       {
+  //         img: "i.6.jpg",
+  //         category: "product",
+  //       },
+  //       {
+  //         img: "i.9.jpg",
+  //         category: "front",
+  //       },
+  //       {
+  //         img: "i.8.jpg",
+  //         category: "web",
+  //       },
+  //     ],
+  //   };
+  // },
+  // computed: {
+  //   filteredItems() {
+  //     if (this.selectedCategory === "all") {
+  //       return this.items; // Отобразить все проекты
+  //     } else {
+  //       return this.items.filter(item => item.category === this.selectedCategory); // Фильтровать проекты по категории
+  //     }
+  //   },
+  // },
+  methods: {
+    // filterProjects(category) {
+    //   this.selectedCategory = category;
+    // },
+    scrollToTop() {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+    },
+    downloadPDF() {
+      const fileUrl = "portfolio-master/public/resume.pdf"; // Замените на путь к вашему файлу PDF
+      const link = document.createElement("a");
+      link.href = fileUrl;
+      link.setAttribute("download", "resume.pdf");
+      link.style.display = "none";
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    },
+  },
+  
 });
+
 </script>
+
 <style scoped>
+
+.scroll-top-button {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  border-radius: 25%;
+  background-color: rgba(0, 0, 0, 0.1);
+  color: white;
+  transition: background-color 0.3s;
+}
+
+.scroll-top-button:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
 .v-container {
   padding: 16px 0 16px 0;
 }
