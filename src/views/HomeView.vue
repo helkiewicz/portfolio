@@ -135,40 +135,69 @@
           <v-divider></v-divider>
         </div>
       </v-col>
-      <v-col cols="12" sm="12" id="services">
-        <div class="d-flex justify-center mb-6">
-          <v-btn color="#2288f5" class="mr-2" @click="filterProjects('all')">All</v-btn>
-          <v-btn class="mr-2" variant="tonal" @click="filterProjects('web')">Web Design</v-btn>
-          <v-btn class="mr-2" variant="tonal" @click="filterProjects('front')">Front Design</v-btn>
-          <v-btn class="mr-2" variant="tonal" @click="filterProjects('product')">Product Design</v-btn>
-        </div>
-        <!-- <div v-for="project in filteredItems" :key="project.img">
-          
-        </div> -->
-      </v-col>
       
-      <v-col cols="12" class="imgHover">
-        <v-row class="fill-height" align="center" justify="center">
-          <template v-for="(item, i) in items" :key="i">
-            <v-col cols="12" md="4">
-              <v-hover v-slot="{ isHovering, props }">
-                <v-card
-                  :elevation="isHovering ? 12 : 2"
-                  :class="{ 'on-hover': isHovering }"
-                  v-bind="props"
-                >
-                  <v-img :src="item.img" height="225px" cover> </v-img>
-                </v-card>
-              </v-hover>
-            </v-col>
-          </template>
-        </v-row>
+      <v-col cols="12" sm="12" id="services">
+  <div class="d-flex justify-center mb-6">
+    <v-btn
+      color="#2288f5"
+      class="mr-2"
+      @click="filterProjects('all')"
+      :disabled="selectedCategory === 'all'"
+    >
+      All
+    </v-btn>
+    <v-btn
+      class="mr-2"
+      variant="tonal"
+      @click="filterProjects('web')"
+      :disabled="selectedCategory === 'web'"
+    >
+      Web Design
+    </v-btn>
+    <v-btn
+      class="mr-2"
+      variant="tonal"
+      @click="filterProjects('front')"
+      :disabled="selectedCategory === 'front'"
+    >
+      Front Design
+    </v-btn>
+    <v-btn
+      class="mr-2"
+      variant="tonal"
+      @click="filterProjects('product')"
+      :disabled="selectedCategory === 'product'"
+    >
+      Product Design
+    </v-btn>
+  </div>
+</v-col>
+
+
+      
+<v-col cols="12" class="imgHover">
+  <v-row class="fill-height" align="center" justify="center">
+    <template v-for="(item, i) in filteredItems.slice(0, rowCount * 3)" :key="i">
+      <v-col cols="12" md="4">
+        <v-hover v-slot="{ isHovering, props }">
+          <v-card
+            :elevation="isHovering ? 12 : 2"
+            :class="{ 'on-hover': isHovering }"
+            v-bind="props"
+          >
+            <v-img :src="item.img" height="225px" cover></v-img>
+          </v-card>
+        </v-hover>
       </v-col>
+    </template>
+  </v-row>
+</v-col>
+
       <v-col cols="12" sm="12">
-        <div class="d-flex justify-center mb-6">
-          <v-btn color="#2288f5" class="mt-4" @click="loadMore">Load More</v-btn>
-        </div>
-      </v-col>
+    <div class="d-flex justify-center mb-6">
+      <v-btn color="#2288f5" class="mt-4" @click="loadMore">Load More</v-btn>
+    </div>
+  </v-col>
       <v-col cols="12" id="page">
         <div class="pre">
           <v-row>
@@ -320,133 +349,98 @@
 
 
 
+
 <script>
 import { defineComponent } from "vue";
 import NavBar from "../components/NavBar.vue";
 import FooterView from "../components/FooterView.vue";
+import { ref } from "vue";
 
 export default defineComponent({
   name: "HomeView",
   components: {
+    
     NavBar,
     FooterView
   },
+  data() {
+  return {
+    selectedCategory: 'all', 
+    items: [
+    { img: "i.3.png", category: "web" },
+      { img: "i.4.png", category: "front" },
+      { img: "i.5.png", category: "web" },
+      { img: "i.6.jpg", category: "web" },
+      { img: "i.9.jpg", category: "web" },
+      { img: "i.8.jpg", category: "front" },
+      { img: "i.13.jpg", category: "product" },
+      { img: "i.14.jpg", category: "product" },
+      { img: "i.15.jpg", category: "product" },
+    ],
+  };
+},
+
   setup() {
-    
+    const rowCount = ref(1);
+    const loadMore = () => {
+      rowCount.value += 1;
+    }
     return {
-      
+      rowCount,
+      loadMore,
       slider2: 50,
 
-      items: [
-        {
-          img: "i.3.png",
-        },
-        {
-          img: "i.4.png",
-        },
-        {
-          img: "i.5.png",
-        },
-        {
-          img: "i.6.jpg",
-        },
-        {
-          img: "i.9.jpg",
-        },
-        {
-          img: "i.8.jpg",
-        },
-      ],
+      // items: [
+      //   {
+      //     img: "i.3.png",
+      //   },
+      //   {
+      //     img: "i.4.png",
+      //   },
+      //   {
+      //     img: "i.5.png",
+      //   },
+      //   {
+      //     img: "i.6.jpg",
+      //   },
+      //   {
+      //     img: "i.9.jpg",
+      //   },
+      //   {
+      //     img: "i.8.jpg",
+      //   },
+      //   {
+      //     img: "i.13.jpg",
+      //   },
+      //   {
+      //     img: "i.14.jpg",
+      //   },
+      //   {
+      //     img: "i.15.jpg",
+      //   },
+      // ],
     };
   },
-//   setup() {
-    
-    
-//     const items = [
-//       {
-//         img: "i.3.png",
-//       },
-//       {
-//         img: "i.4.png",
-//       },
-//       {
-//         img: "i.5.png",
-//       },
-//       {
-//         img: "i.6.jpg",
-//       },
-//       {
-//         img: "i.9.jpg",
-//       },
-//       {
-//         img: "i.8.jpg",
-//       },
-//       {
-//         img: "i.13.png",
-//       },
-//       {
-//         img: "i.14.png",
-//       },
-//       {
-//         img: "i.15.png",
-//       },
-//     ];
-//     const displayedItems = ref(items.slice(0, 3));
 
-// const loadMore = () => {
-//   const startIndex = displayedItems.value.length;
-//   const endIndex = startIndex + 3;
-//   displayedItems.value = displayedItems.value.concat(items.slice(startIndex, endIndex));
-// };
+  computed: {
+  filteredItems() {
+    if (this.selectedCategory === 'all') {
+      return this.items;
+    } else {
+      return this.items.filter(item => item.category === this.selectedCategory);
+    }
+  },
+},
 
-// return {
-//   slider2: 50,
-//   displayedItems,
-//   loadMore,
-// };
-//   },
-  // data() {
-  //   return {
-  //     selectedCategory: "all",
-  //     slider2: 50,
-  //     items: [
-  //       {
-  //         img: "i.3.png",
-  //         category: "web",
-  //       },
-  //       {
-  //         img: "i.4.png",
-  //         category: "front",
-  //       },
-  //       {
-  //         img: "i.5.png",
-  //         category: "web",
-  //       },
-  //       {
-  //         img: "i.6.jpg",
-  //         category: "product",
-  //       },
-  //       {
-  //         img: "i.9.jpg",
-  //         category: "front",
-  //       },
-  //       {
-  //         img: "i.8.jpg",
-  //         category: "web",
-  //       },
-  //     ],
-  //   };
-  // },
-  // computed: {
-  //   filteredItems() {
-  //     if (this.selectedCategory === "all") {
-  //       return this.items; // Отобразить все проекты
-  //     } else {
-  //       return this.items.filter(item => item.category === this.selectedCategory); // Фильтровать проекты по категории
-  //     }
-  //   },
-  // },
+
   methods: {
+    // loadMore() {
+    //   this.rowCount++;
+    // },
+    filterProjects(category) {
+    this.selectedCategory = category;
+  },
+
     scroll(refName) {
         const element = document.getElementById(refName);
         element.scrollIntoView({ behavior: "smooth" });
